@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+.sheet-2colrow {
+    display:block !important;
+    box-sizing: content-box;
+    clear: both;
+    width: 900px;
+    overflow: hidden;
+}
+
+.sheet-col {
+    display:inline-block;
+
+    width: 400px !important;
+    min-width: 400px; 
+    box-sizing: content-box;
+    clear: both;
+    vertical-align:top;
+}

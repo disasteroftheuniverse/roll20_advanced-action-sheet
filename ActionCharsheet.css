@@ -1,0 +1,363 @@
+/* General Number Stylers -  Hide Number Spinners*/
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+   -moz-appearance: textfield;
+	text-align:center;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+	padding:0px;
+	overflow:visible;
+	line-height:16px;
+	margin: 1px;
+	height:16px;
+	text-align: center;
+	border-width: 0px 0px 1px 0px;
+	border-color: black;
+	border-radius: 0px;
+	border-style: solid;
+	font-size: 12px;
+}
+
+
+/*Sheet styles*/
+.charsheet {
+    font-family: 'Oswald','Open Sans Condensed','Arial', sans-serif;
+    font-size: 10px !important;
+    background-color:white;
+	font-weight:300;
+}
+
+.sheet-group {
+	border: 1px solid black;
+	border-radius: 8px;
+	overflow:hidden;
+	background-color: white;
+	box-shadow: 5px 5px 0px 0px black;
+	margin: 0px 0px 8px 0px;
+	
+}
+
+.sheet-table {
+	width: 100%;
+	border: 0px none none;
+	border-collapse:collapse;
+	z-index:9;
+	text-align: center;
+}
+
+.sheet-table tr, .sheet-table th, .sheet-table td {
+	text-align: center;
+	border-collapse:collapse;
+}
+
+.sheet-table-title {
+	position:relative;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+.sheet-table-title {
+	position:relative;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+table.sheet-table-body {
+	position:relative;
+	padding: 0px;
+	margin: 0px;
+	top: -10px;
+	
+}
+
+
+.sheet-table-title th {
+	background-color:black;
+	text-align:center;
+	color: white;
+	line-height:12px;
+}
+
+.sheet-main-attr {
+	font-size:16px;
+	font-weight:bolder;
+	margin:1px;
+}
+.sheet-pts {
+	padding:0px;
+	margin: 1px;
+	height:12px;
+	text-align: center;
+	border-width: 0px 0px 1px 0px;
+	border-color: black;
+	border-radius: 0px;
+	border-style: solid;
+
+}
+
+.sheet-pts:disabled {
+	padding:0px;
+	margin: 1px;
+	height:12px;
+	text-align: center;
+	border-width: 0px 0px 0px 0px;
+	border-color: black;
+	border-radius: 0px;
+	border-style: solid;
+	background-color: white;
+	cursor: default;
+
+}
+
+.sheet-pts-attr {
+	width: 30px!important;
+}
+
+.sheet-pts-dmg {
+	width: 60px!important;
+}
+
+.sheet-trait-name {
+	width: 25%!important;
+}
+
+.sheet-trait-effect {
+	width: 60%!important;
+}
+
+.sheet-trait-pts {
+	width: 15%!important;
+}
+
+.sheet-skill-wide {
+	width: 40%;
+}
+
+.sheet-score-attr {
+	background-color:white;
+	padding:0px;
+	margin: 1px;
+	height: 30px;
+	width: 24px!important;
+	line-height: 24px;
+	text-align: center;
+	border-width: 1px 1px 1px 1px;
+	border-color: black;
+	border-radius: 2px;
+	border-style: solid;
+	font-weight: bolder;
+	font-size: 16px;
+}
+.sheet-score-attr:disabled {
+background-color:white;
+}
+
+
+/*Collapsing Group Sections*/
+
+input.sheet-expand {
+    float: left;
+	z-index: 10;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	top: -12px;
+	width: 100%;
+	opacity: 0;
+
+}
+
+input.sheet-expand:checked ~ table.sheet-collapse {
+    display: none;
+}
+
+input.sheet-expand:checked ~ div.sheet-collapse {
+    display: none;
+}
+
+
+.sheet-action-row {
+	
+	display: block;
+	line-height: 16px;
+	padding: 0px;
+	margin: 0px;
+	height: 16px;
+	width:100%;
+	white-space: nowrap;
+	overflow:hidden;
+	float: left;
+	
+}
+
+.sheet-action-row-head {
+	font-weight: bold;
+	
+}
+
+.sheet-action-cell {
+	float:left;
+	display: inline-block;
+	vertical-align: top;
+	height: 16px;
+	line-height: 16px;
+	padding: 0px;
+	text-align: center;
+	margin: 0px 2px 2px 1px;
+	
+}
+
+div.sheet-table-body {
+	position:relative;
+	padding: 0px;
+	margin: 0px;
+	top: -10px;
+	
+}
+
+.sheet-repeats {
+	min-height: 40px;
+}
+
+fieldset {
+	border: none;
+	margin: 0px;
+	padding: 0px 0px 2px 0px;
+	display:block;
+	vertical-align:top;
+	position: relative;
+}
+
+button {
+	height:16px;
+	padding:1px!important;
+	text-align: center;
+	vertical-align:middle;
+}
+
+td.sheet-derived {
+	text-align: right;
+}
+
+/* damage boxes --------------------------------------- */
+
+.sheet-dmgA-hidden{
+  display: none !important;
+  font-size: 11px;
+}
+
+input.sheet-dmgA-sel{
+  width: 8px;
+  height: 10px;
+  display: none;
+  opacity: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.sheet-dmgA-box:checked + .sheet-dmgA-box,  {
+  display: inline-block;
+  color:black;
+}
+
+/* Styling of the span common to all states */
+span.sheet-dmgA-sel  {
+  border: none;
+  text-align: center;
+  display: inline-block;
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Arial",sans-serif;
+}
+
+input.sheet-dmgA-sel [value="0"]:checked ~ span::before {
+  content: "0";
+  
+}
+
+input.sheet-dmgA-sel[value="1"]:checked ~ span::before {
+  content: "X";
+	
+  
+}
+
+.sheet-health tr, .sheet-health td {
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+
+/* damage boxes --------------------------------------- */
+
+.sheet-dmgB-hidden{
+  display: none !important;
+  font-size: 11px;
+}
+
+input.sheet-dmgB-sel{
+  width: 8px;
+  height: 10px;
+  display: none;
+  opacity: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.sheet-dmgB-box:checked + .sheet-dmgB-box,  {
+  display: inline-block;
+  color:black;
+}
+
+/* Styling of the span common to all states */
+span.sheet-dmgB-sel  {
+  border: none;
+  text-align: center;
+  display: inline-block;
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Arial",sans-serif;
+}
+
+input.sheet-dmgB-sel [value="0"]:checked ~ span::before {
+  content: "0";
+  
+}
+
+input.sheet-dmgB-sel[value="1"]:checked ~ span::before {
+  content: "/";
+	
+  
+}
+
+input.sheet-dmgB-sel[value="2"]:checked ~ span::before {
+  content: "X";
+}
+
+
