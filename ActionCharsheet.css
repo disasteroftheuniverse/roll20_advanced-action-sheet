@@ -17,9 +17,9 @@ select {
     -webkit-appearance: none;
 	padding:0px;
 	overflow:visible;
-	line-height:16px;
+	line-height:12px;
 	margin: 1px;
-	height:16px;
+	height:19px;
 	text-align: center;
 	border-width: 0px 0px 1px 0px;
 	border-color: black;
@@ -98,7 +98,7 @@ table.sheet-table-body {
 .sheet-pts {
 	padding:0px;
 	margin: 1px;
-	height:12px;
+	height:19px;
 	text-align: center;
 	border-width: 0px 0px 1px 0px;
 	border-color: black;
@@ -142,7 +142,7 @@ table.sheet-table-body {
 }
 
 .sheet-skill-wide {
-	width: 40%;
+	width: 40%!important;
 }
 
 .sheet-score-attr {
@@ -186,6 +186,9 @@ input.sheet-expand:checked ~ table.sheet-collapse {
 input.sheet-expand:checked ~ div.sheet-collapse {
     display: none;
 }
+
+
+/*Collapsing Group Sections end*/
 
 
 .sheet-action-row {

@@ -214,26 +214,26 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                
                 <td class="sheet-derived">Serious:</td>
                 <td><input type="number" name="attr_score-serious-wound" value="(round((@{score-health})*3))" class="sheet-pts sheet-pts-attr"
                     disabled="disabled" /></td>
                 <td class="sheet-derived">Critical:</td>
                 <td><input type="number" name="attr_score-critical-wound" value="(round((@{score-health})*4))" class="sheet-pts sheet-pts-attr"
                     disabled="disabled" /></td>
+				 <td class="sheet-derived">fatal:</td>
+                <td><input type="number" name="attr_score-fatal-wound" value="(round((@{score-health})*5))" class="sheet-pts sheet-pts-attr"
+                    disabled="disabled" /></td>
               </tr>
               <tr>
                 <td><span class="sheet-main-attr">MOV</span></td>
                 <td><input type="number" name="attr_pts-move" value="0" class="sheet-pts sheet-pts-attr" /></td>
                 <td><input type="number" name="attr_mod-move" value="0" class="sheet-pts sheet-pts-attr" /></td>
-                <td><input name="attr_score-move" type="number" class="sheet-score-attr" value="((round((@{pts-move})/5))+(@{mod-move})+((@{score-reflexes})+(round(((@{score-strength})+(@{score-health}))/2))))"
-                    disabled="disabled" /></td>
+                <td><input name="attr_score-move" type="number" class="sheet-score-attr" value="((round((@{pts-move})/5))+(@{mod-move})+((@{score-reflexes})+(round(((@{score-strength})+(@{score-health}))/2))))" disabled="disabled" /></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td class="sheet-derived">Run:</td>
-                <td><input type="number" name="attr_score-run" value="(round((@{score-move})*2))" class="sheet-pts sheet-pts-attr"
-                    disabled="disabled" /></td>
+                <td><input type="number" name="attr_score-run" value="(round((@{score-move})*2))" class="sheet-pts sheet-pts-attr" disabled="disabled" /></td>
                 <td class="sheet-derived">Sprint:</td>
                 <td><input type="number" name="attr_score-sprint" value="(round((@{score-move})*4))" class="sheet-pts sheet-pts-attr"
                     disabled="disabled" /></td>
@@ -266,6 +266,28 @@
 
 
 
+        </div>
+<div class="sheet-group">
+        <table class="sheet-table sheet-table-title">
+            <thead>
+              <tr>
+                <th> Armor </th>
+              </tr>
+            </thead>
+          </table>
+          <input type="checkbox" class="sheet-expand">
+          <div class="sheet-action-row sheet-table-body sheet-action-row-head sheet-collapse">
+            <div class="sheet-action-cell" style="width:50%;">armor</div>
+            <div class="sheet-action-cell" style="width:25%;">location</div>
+            <div class="sheet-action-cell" style="width:30px;">AV</div>
+          </div>
+          <div class="sheet-table-body sheet-collapse">
+            <fieldset class="repeating_armor">
+              <input type="text" name="attr_name" class="sheet-pts" style="width:50%;" />
+              <input type="text" name="attr_location" class="sheet-pts" style="width:25%;" />
+              <input type="number" name="attr_score-av" value="0" class="sheet-pts" style="width:30px;" />
+            </fieldset>
+          </div>
         </div>
         <div class="sheet-group">
           <table class="sheet-table sheet-table-title">
@@ -380,188 +402,132 @@
                 <td colspan="4"></td>
                 <td>25</td>
               </tr>
-
               <tr class="sheet-health">
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA1" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA1" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA1" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA2" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA2" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA2" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA3" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA3" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA3" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA4" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA4" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA4" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA5" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA5" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA5" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA6" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA6" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA6" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA7" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA7" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA7" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA8" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA8" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA8" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA9" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA9" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA9" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA10" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA10" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA10" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA11" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA11" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA11" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA12" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA12" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA12" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA13" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA13" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA13" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA14" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA14" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA14" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA15" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA15" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA15" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA16" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA16" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA16" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA17" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA17" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA17" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA18" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA18" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA18" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA19" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA19" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA19" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA20" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA20" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA20" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA21" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA21" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA21" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA22" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA22" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA22" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA23" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA23" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA23" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA24" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA24" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA24" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgA25" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
-                    <input name="attr_dmgA25" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
-                    <input name="attr_dmgA25" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
-                    <span class="sheet-dmgA-sel"></span></div>
-                </td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA1" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA1" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA1" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA2" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA2" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA2" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA3" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA3" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA3" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA4" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA4" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA4" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA5" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA5" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA5" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA6" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA6" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA6" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA7" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA7" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA7" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA8" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA8" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA8" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA9" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA9" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA9" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA10" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA10" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA10" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA11" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA11" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA11" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA12" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA12" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA12" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA13" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA13" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA13" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA14" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA14" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA14" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA15" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA15" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA15" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA16" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA16" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA16" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA17" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA17" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA17" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA18" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA18" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA18" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA19" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA19" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA19" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA20" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA20" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA20" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA21" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA21" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA21" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA22" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA22" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA22" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA23" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA23" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA23" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA24" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA24" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA24" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgA25" type="checkbox" class="sheet-dmgA-hidden sheet-dmgA-box" value="0" checked="checked">
+                  <input name="attr_dmgA25" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="1">
+                  <input name="attr_dmgA25" type="radio" class="sheet-dmgA-sel sheet-dmgA-box" value="0">
+                  <span class="sheet-dmgA-sel"></span></div></td>
               </tr>
               <tr>
                 <td colspan="4"></td>
@@ -575,233 +541,310 @@
                 <td colspan="4"></td>
                 <td>25</td>
               </tr>
-
               <tr class="sheet-health">
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB1" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB1" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB1"
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB1" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB1" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB1"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB1" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB2" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB2" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB2"
+                  <input name="attr_dmgB1" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB2" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB2" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB2"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB2" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB3" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB3" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB3"
+                  <input name="attr_dmgB2" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB3" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB3" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB3"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB3" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB4" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB4" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB4"
+                  <input name="attr_dmgB3" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB4" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB4" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB4"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB4" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB5" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB5" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB5"
+                  <input name="attr_dmgB4" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB5" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB5" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB5"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB5" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB6" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB6" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB6"
+                  <input name="attr_dmgB5" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB6" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB6" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB6"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB6" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB7" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB7" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB7"
+                  <input name="attr_dmgB6" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB7" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB7" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB7"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB7" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB8" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB8" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB8"
+                  <input name="attr_dmgB7" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB8" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB8" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB8"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB8" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB9" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB9" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB9"
+                  <input name="attr_dmgB8" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB9" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB9" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB9"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB9" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB10" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB10" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB10"
+                  <input name="attr_dmgB9" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB10" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB10" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB10"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB10" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB11" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB11" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB11"
+                  <input name="attr_dmgB10" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB11" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB11" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB11"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB11" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB12" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB12" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB12"
+                  <input name="attr_dmgB11" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB12" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB12" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB12"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB12" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB13" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB13" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB13"
+                  <input name="attr_dmgB12" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB13" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB13" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB13"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB13" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB14" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB14" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB14"
+                  <input name="attr_dmgB13" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB14" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB14" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB14"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB14" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB15" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB15" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB15"
+                  <input name="attr_dmgB14" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB15" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB15" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB15"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB15" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB16" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB16" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB16"
+                  <input name="attr_dmgB15" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB16" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB16" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB16"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB16" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB17" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB17" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB17"
+                  <input name="attr_dmgB16" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB17" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB17" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB17"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB17" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB18" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB18" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB18"
+                  <input name="attr_dmgB17" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB18" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB18" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB18"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB18" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB19" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB19" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB19"
+                  <input name="attr_dmgB18" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB19" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB19" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB19"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB19" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB20" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB20" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB20"
+                  <input name="attr_dmgB19" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB20" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB20" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB20"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB20" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB21" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB21" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB21"
+                  <input name="attr_dmgB20" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB21" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB21" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB21"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB21" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span>
-                  </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB22" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB22" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB22"
+                  <input name="attr_dmgB21" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span> </div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB22" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB22" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB22"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB22" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span> </div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB23" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB23" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB23"
+                  <input name="attr_dmgB22" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB23" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB23" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB23"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB23" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB24" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB24" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB24"
+                  <input name="attr_dmgB23" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB24" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB24" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB24"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB24" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
-                <td class="sheet-health">
-                  <div>
-                    <input name="attr_dmgB25" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
-                    <input name="attr_dmgB25" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1"><input name="attr_dmgB25"
+                  <input name="attr_dmgB24" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
+                <td class="sheet-health"><div>
+                  <input name="attr_dmgB25" type="checkbox" class="sheet-dmgB-hidden sheet-dmgB-box" value="0" checked="checked">
+                  <input name="attr_dmgB25" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="1">
+                  <input name="attr_dmgB25"
                       type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="2">
-                    <input name="attr_dmgB25" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
-                    <span class="sheet-dmgB-sel"></span></div>
-                </td>
+                  <input name="attr_dmgB25" type="radio" class="sheet-dmgB-sel sheet-dmgB-box" value="0">
+                  <span class="sheet-dmgB-sel"></span></div></td>
               </tr>
-			<tr>
+              <tr>
                 <td></td>
               </tr>
-				<tr>
-					<td colspan="3"><strong>Injuries:</strong></td>
-					<td colspan="1"></td>
-					<td colspan="2" style="text-align:right;">None:</td>
-					<td colspan="2"><input type="radio" name="attr_injury" value="0"/></td>
-					<td colspan="2"  style="text-align:right;">Light:</td>
-					<td colspan="2"><input type="radio" name="attr_injury" value="-1"/></td>
-					<td colspan="2"  style="text-align:right;">Serious:</td>
-					<td colspan="2"><input type="radio" name="attr_injury" value="-3"/></td>
-					<td colspan="2"  style="text-align:right;">Critical:</td>
-					<td colspan="2"><input type="radio" name="attr_injury" value="-6"/></td>
-					<td colspan="5"></td>
-				</tr>
+              <tr>
+                <td colspan="3"><strong>Injuries:</strong></td>
+                <td colspan="1"></td>
+                <td colspan="2" style="text-align:right;">None:</td>
+                <td colspan="2"><input type="radio" name="attr_injury" value="0"/></td>
+                <td colspan="2"  style="text-align:right;">Light:</td>
+                <td colspan="2"><input type="radio" name="attr_injury" value="-1"/></td>
+                <td colspan="2"  style="text-align:right;">Serious:</td>
+                <td colspan="2"><input type="radio" name="attr_injury" value="-3"/></td>
+                <td colspan="2"  style="text-align:right;">Critical:</td>
+                <td colspan="2"><input type="radio" name="attr_injury" value="-6"/></td>
+                <td colspan="5"></td>
+              </tr>
             </table>
-
           </div>
+        </div>
+        <div class="sheet-group">
+          <table class="sheet-table sheet-table-title">
+            <thead>
+              <tr>
+                <th> Ranged Attacks</th>
+              </tr>
+            </thead>
+          </table>
+          <input type="checkbox" class="sheet-expand">
+          <div class="sheet-action-row sheet-table-body sheet-action-row-head sheet-collapse">
+            <div class="sheet-action-cell" style="width:80px;">weapon</div>
+            <div class="sheet-action-cell" style="width:80px;">dmg</div>
+            <div class="sheet-action-cell" style="width:30px;">type</div>
+            <div class="sheet-action-cell" style="width:38px;">Acc</div>
+			<div class="sheet-action-cell" style="width:36px;">Range</div>
+            <div class="sheet-action-cell" style="width:30px;">Rmod</div>
+            <div class="sheet-action-cell" style="width:30px;">Amm</div>
+			<div class="sheet-action-cell" style="width:30px;">RoF</div>
+          </div>
+          <div class="sheet-table-body sheet-collapse">
+            <fieldset class="repeating_ranged">
+              <input type="text" name="attr_name" class="sheet-pts" style="width:80px;" />
+              <input type="text" name="attr_dmg" class="sheet-pts" style="width:60px;" />
+			  <button type="roll" value="/roll (@{dmg})" name="roll_Roll-skill" style="width:16px;"></button>
+              <select name="attr_type" style="width:30px;">
+                <option value="1">B/S</option>
+				<option value="2">B/L</option>
+				<option value="3">P/L</option>
+              </select>
+              <input type="number" name="attr_acc" value="0" class="sheet-pts" style="width:30px;" />
+				<input type="number" name="attr_range" value="0" class="sheet-pts" style="width:36px;" />
+				<input type="number" name="attr_rmod" value="0" class="sheet-pts" style="width:30px;" />
+				<input type="number" name="attr_ammo" value="0" class="sheet-pts" style="width:30px;" />
+				<input type="number" name="attr_rof" value="0" class="sheet-pts" style="width:30px;" />
+              
+            </fieldset>
+          </div>
+        </div>
+        <div class="sheet-group">
+          <table class="sheet-table sheet-table-title">
+            <thead>
+              <tr>
+                <th> Melee Attacks</th>
+              </tr>
+            </thead>
+          </table>
+          <input type="checkbox" class="sheet-expand">
+          <div class="sheet-action-row sheet-table-body sheet-action-row-head sheet-collapse">
+            <div class="sheet-action-cell" style="width:80px;">weapon/atk</div>
+            <div class="sheet-action-cell" style="width:80px;">dmg</div>
+            <div class="sheet-action-cell" style="width:30px;">type</div>
+            <div class="sheet-action-cell" style="width:38px;">size</div>
+            <div class="sheet-action-cell" style="width:36px;">Init</div>
+            <div class="sheet-action-cell" style="width:30px;">acc</div>
+          </div>
+          <div class="sheet-table-body sheet-collapse">
+            <fieldset class="repeating_melee">
+              <input type="text" name="attr_name" class="sheet-pts" style="width:80px;" />
+              <input type="text" name="attr_dmg" class="sheet-pts" style="width:60px;" />
+              <button type="roll" value="/roll (@{dmg})" name="roll_Roll-skill" style="width:16px;"></button>
+              <select name="attr_type" style="width:30px;">
+                <option value="1">B/S</option>
+                <option value="2">B/L</option>
+                <option value="3">P/L</option>
+              </select>
+              <input type="text" name="attr_size" value="0" class="sheet-pts" style="width:30px;" />
+              <input type="number" name="attr_init" value="0" class="sheet-pts" style="width:36px;" />
+              <input type="number" name="attr_acc" value="0" class="sheet-pts" style="width:30px;" />
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="sheet-group">
+          <table class="sheet-table sheet-table-title">
+            <thead>
+              <tr>
+                <th> Inventory </th>
+              </tr>
+            </thead>
+          </table>
+          <input type="checkbox" class="sheet-expand">
+          <div class="sheet-action-row sheet-table-body sheet-action-row-head sheet-collapse">
+			<div class="sheet-action-cell" style="width:20px;">eqp</div>
+            <div class="sheet-action-cell" style="width:50%;">item</div>
+            <div class="sheet-action-cell" style="width:30px;">str</div>
+            <div class="sheet-action-cell" style="width:30px;">wt(kg)</div>
+			<div class="sheet-action-cell" style="width:30px;">&nbsp;$</div>
+          </div>
+          <div class="sheet-table-body sheet-collapse">
+            <fieldset class="repeating_items">
+			  <input type="checkbox" name="attr_carry" class="sheet-check" style="width:18px;" />
+              <input type="text" name="attr_name" class="sheet-pts" style="width:50%;" />
+              <input type="number" name="attr_str" class="sheet-pts" style="width:30px;" />
+              <input type="number" name="attr_wt" value="0" class="sheet-pts" style="width:30px;" />
+			  <input type="number" name="attr_cost" value="0" class="sheet-pts" style="width:30px;" />
+            </fieldset>
+			<div class="sheet-action-cell" style="width:20px;">&nbsp;</div>
+            <div class="sheet-action-cell" style="width:50%;">&nbsp;</div>
+            <div class="sheet-action-cell" style="width:30px;"><strong>Totals:</strong></div>
+            <div class="sheet-action-cell" style="width:30px;">
+				<input type="number" name="attr_total-wt" value="0" class="sheet-pts" style="width:30px;" />
+			  </div>
+			<div class="sheet-action-cell" style="width:30px;">
+				<input type="number" name="attr_total-cost" value="0" class="sheet-pts" style="width:30px;" />
+			  
+			  </div>
+          </div>
+
         </div>
       </div>
     </div>
